@@ -14,7 +14,7 @@ URL:		http://gedit.sourceforge.net/
 Patch0:		%{name}-gnome-config.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
+BuildRequires:	docbook-style-dsssl
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel > 1.0.55
 BuildRequires:	gnome-print-devel >= 0.28
@@ -22,9 +22,10 @@ BuildRequires:	gnome-vfs >= 1.0
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
 BuildRequires:	libglade-devel >= 0.11
+BuildRequires:	libtool
 BuildRequires:	zlib-devel
-Obsoletes:	gedit-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	gedit-devel
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
