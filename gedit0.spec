@@ -10,13 +10,13 @@ Group(pl):	X11/Aplikacje/Edytory
 Group(pt):	X11/Aplicações/Editores
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/gedit/%{name}-%{version}.tar.gz
 URL:		http://gedit.sourceforge.net/
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-libs-devel > 1.0.55
+BuildRequires:	gnome-print-devel >= 0.23
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
-BuildRequires:	zlib-devel
-BuildRequires:	gnome-libs-devel > 1.0.55
-BuildRequires:	gnome-print-devel >= 0.18
 BuildRequires:	libglade-devel >= 0.11
-BuildRequires:	gettext-devel
+BuildRequires:	zlib-devel
 Requires:	go-plugins
 Obsoletes:	gedit-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
