@@ -14,6 +14,7 @@ URL:		http://gedit.sourceforge.net/
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel > 1.0.55
 BuildRequires:	gnome-print-devel >= 0.24
+BuildRequires:	gnome-vfs >= 1.0
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
 BuildRequires:	libglade-devel >= 0.11
