@@ -1,14 +1,16 @@
-Summary:	gEdit - small but powerful text editor for X Window.
-Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window.
+Summary:	gEdit - small but powerful text editor for X Window
+Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
-Version:	0.5.1
-Release:	3
+Version:	0.5.4
+Release:	1
 Copyright:	GPL
 Group:		X11/Applications/Editors
 Group(pl):	X11/Aplikacje/Edytory
-Source:		%{name}-%{version}.tar.gz
-Patch0:		gedit-DESTDIR.patch
-Patch1:		gedit-desktop.patch
+Source:		http://gedit.pn.org/%{name}-%{version}.tar.gz
+Patch0:		gedit-desktop.patch
+Patch1:		gedit-DESTDIR.patch
+Patch2:		gedit-dcl.patch
+Patch3:		gedit-plugins.patch
 URL:		http://gedit.pn.org
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	glib-devel >= 1.2.0
@@ -16,7 +18,11 @@ BuildRequires:	imlib-devel
 BuildRequires:	zlib-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel
+Requires: 	go
 BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 gEdit is a small but powerful text editor for GTK+ and/or GNOME.
@@ -32,8 +38,8 @@ nie zwiêkszaj±c rozmiarów samego programu, mo¿liwo¶æ edycji wielu
 dokumentów naraz i wiele innych.
 
 %package devel
-Summary:	Develop plugins for the gEdit editor.
-Summary(pl):	Biblioteki umo¿liwiaj±ce pisanie pluginów do gEdit.
+Summary:	Develop plugins for the gEdit editor
+Summary(pl):	Biblioteki umo¿liwiaj±ce pisanie wtyczek dla gEdit
 Group: 		Development/Libraries
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
@@ -52,13 +58,14 @@ sposobów.
  
 %prep
 %setup -q
-%patch0 -p1
+%patch0 -p0
 %patch1 -p1
+%patch2 -p0
+%patch3 -p0
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target_platform} \
-	--prefix=/usr/X11R6
+LDFLAGS="-s" ; export LDFLAGS
+%configure
 
 make
 
@@ -67,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 
 make install-strip DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT/usr/X11R6/man/man1/gedit.1 \
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/gedit.1 \
 	FAQ README README.plugins ChangeLog TODO AUTHORS THANKS KNOWNBUGS
 
 %find_lang %{name}
@@ -78,18 +85,21 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc {FAQ,README,ChangeLog,TODO,AUTHORS,THANKS,README.plugins,KNOWNBUGS}.gz
-%attr(755,root,root) /usr/X11R6/bin/gedit
+%attr(755,root,root) %{_bindir}/gedit
 
-/usr/X11R6/share/gnome/apps/Applications/gedit.desktop
-/usr/X11R6/share/pixmaps/*
-/usr/X11R6/share/mime-info/*
-/usr/X11R6/share/geditrc
-/usr/X11R6/man/man1/gedit.1.gz
-%attr(755,root,root) /usr/X11R6/libexec/go/plugins/*
+%{_datadir}/applnk/Editors/gedit.desktop
 
+%dir %{_datadir}/gnome/help/gedit
+%{_datadir}/gnome/help/gedit/C
+%lang(no) %{_datadir}/gnome/help/gedit/no
+
+%{_datadir}/pixmaps/*
+%{_datadir}/mime-info/*
+%{_datadir}/geditrc
+%{_mandir}/man1/gedit.1.gz
 
 %files devel
 %defattr(644,root,root,755)
-%dir /usr/X11R6/include/gedit
-/usr/X11R6/include/gedit/client.h
-/usr/X11R6/lib/libclient.a
+%dir %{_includedir}/gedit
+%{_includedir}/gedit/client.h
+%{_libdir}/libclient.a
