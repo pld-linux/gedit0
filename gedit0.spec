@@ -10,12 +10,12 @@ Source:		%{name}-%{version}.tar.gz
 Patch0:		gedit-DESTDIR.patch
 Patch1:		gedit-desktop.patch
 URL:		http://gedit.pn.org
-BuildPrereq:	gtk+-devel >= 1.2.0
-BuildPrereq:	glib-devel >= 1.2.0
-BuildPrereq:	imlib-devel
-BuildPrereq:	zlib-devel
-BuildPrereq:	XFree86-devel
-BuildPrereq:	gnome-libs-devel
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	glib-devel >= 1.2.0
+BuildRequires:	imlib-devel
+BuildRequires:	zlib-devel
+BuildRequires:	XFree86-devel
+BuildRequires:	gnome-libs-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
