@@ -17,6 +17,7 @@ BuildRequires:	zlib-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel
 Requires: 	go-plugins
+Obsoletes:	gedit-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
