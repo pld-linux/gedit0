@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Group(pl):	X11/Aplikacje/Edytory
-Source:		http://download.sourceforge.net/gedit/%{name}-%{version}.tar.gz
+Source0:	http://download.sourceforge.net/gedit/%{name}-%{version}.tar.gz
 URL:		http://gedit.sourceforge.net/
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
@@ -24,16 +24,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 gEdit is a small but powerful text editor for GTK+ and/or GNOME. It
-includes such features as split-screen mode, a plugin API, which  allows
-gEdit to be extended to support many features while remaining  small at its
-core, multiple document editing and many more functions.
+includes such features as split-screen mode, a plugin API, which
+allows gEdit to be extended to support many features while remaining
+small at its core, multiple document editing and many more functions.
 
 %description -l pl
-gEdit jest ma³ym ale potê¿nym edytorem tekstu dla GTK+ i/lub GNOME. Zawiera
-takie funkcje jak tryb podzielonego ekranu, API dla "wtyczek", który
-umo¿liwia rozszerzenie funkcji gEdita o dodatkowe mo¿liwo¶ci, nie
-zwiêkszaj±c rozmiarów samego programu, mo¿liwo¶æ edycji wielu  dokumentów
-naraz i wiele innych.
+gEdit jest ma³ym ale potê¿nym edytorem tekstu dla GTK+ i/lub GNOME.
+Zawiera takie funkcje jak tryb podzielonego ekranu, API dla "wtyczek",
+który umo¿liwia rozszerzenie funkcji gEdita o dodatkowe mo¿liwo¶ci,
+nie zwiêkszaj±c rozmiarów samego programu, mo¿liwo¶æ edycji wielu
+dokumentów naraz i wiele innych.
 
 %prep
 %setup -q
