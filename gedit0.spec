@@ -2,7 +2,7 @@ Summary:	gEdit - small but powerful text editor for X Window
 Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
 Version:	0.9.6
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Editors
@@ -12,8 +12,10 @@ Group(pt):	X11/Aplicações/Editores
 Source0:	http://ftp1.sourceforge.net/gedit/%{name}-%{version}.tar.gz
 URL:		http://gedit.sourceforge.net/
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
+Patch1:		%{name}-gnome-config.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel > 1.0.55
 BuildRequires:	gnome-print-devel >= 0.28
@@ -43,11 +45,12 @@ dokumentów naraz i wiele innych.
 
 %prep
 %setup -q
-%patch -p1
-
+%patch0 -p1
+%patch1 -p1
 rm -f acinclude.m4
 
 %build
+libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
@@ -75,7 +78,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_bindir}/gedit
+%dir %{_libdir}/gedit
+%dir %{_libdir}/gedit/plugins
+%attr(755,root,root) %{_libdir}/gedit/plugins/*.so.*.*
+%{_libdir}/gedit/plugins/*.so
 %{_pixmapsdir}/*
+%{_datadir}/gedit
 %{_datadir}/mime-info/*
 %{_applnkdir}/Office/Editors/gedit.desktop
 %{_mandir}/man1/*
