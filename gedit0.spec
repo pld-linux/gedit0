@@ -4,7 +4,8 @@ Name:		gedit
 Version:	0.5.1
 Release:	3
 Copyright:	GPL
-Group:		X11/Editors
+Group:		X11/Applications/Editors
+Group(pl):	X11/Aplikacje/Edytory
 Source:		%{name}-%{version}.tar.gz
 Patch0:		gedit-DESTDIR.patch
 Patch1:		gedit-desktop.patch
