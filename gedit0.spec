@@ -18,7 +18,7 @@ BuildRequires:	imlib-devel
 BuildRequires:	zlib-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel
-Requires: 	go
+Requires: 	go-plugins
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
