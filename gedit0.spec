@@ -44,12 +44,12 @@ LDFLAGS="-s" ; export LDFLAGS
 %configure \
 	--disable-staic
 
-make gtkrcdir=%{_datadir}/misc
+%{__make} gtkrcdir=%{_datadir}/misc
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	sysdir=%{_applnkdir}/Office/Editors
 
