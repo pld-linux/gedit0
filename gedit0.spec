@@ -1,21 +1,20 @@
 Summary:	gEdit - small but powerful text editor for X Window
 Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
-Version:	0.6.1
-Release:	2
+Version:	0.7.0
+Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Group(pl):	X11/Aplikacje/Edytory
-Source:		http://gedit.pn.org/tar/%{name}-%{version}.tar.gz
-Patch0:		gedit-desktop.patch
-Patch1:		gedit-makefile.patch
-URL:		http://gedit.pn.org/
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	glib-devel >= 1.2.0
+Source:		http://download.sourceforge.net/gedit/%{name}-%{version}.tar.gz
+URL:		http://gedit.sourceforge.net/
+BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
 BuildRequires:	zlib-devel
 BuildRequires:	XFree86-devel
-BuildRequires:	gnome-libs-devel
+BuildRequires:	gnome-libs-devel > 1.0.55
+BuildRequires:	gnome-print-devel >= 0.18
+BuildRequires:	libglade-devel >= 0.11
 BuildRequires:	gettext-devel
 Requires:	go-plugins
 Obsoletes:	gedit-devel
@@ -39,27 +38,26 @@ naraz i wiele innych.
 
 %prep
 %setup -q
-%patch0 -p0
-%patch1 -p0
 
 %build
-automake
 gettextize --copy --force
 LDFLAGS="-s" ; export LDFLAGS
-%configure 
+%configure \
+	--disable-staic
 
-make
+make gtkrcdir=%{_datadir}/misc
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install-strip DESTDIR=$RPM_BUILD_ROOT
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	sysdir=%{_applnkdir}/Editors
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	FAQ README README.plugins ChangeLog TODO AUTHORS THANKS KNOWNBUGS \
-	TODO-road_to_1.0.0
+	FAQ README README.plugins ChangeLog TODO AUTHORS THANKS TODO-road_to_1.0.0
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,14 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_bindir}/gedit
-
-%{_applnkdir}/Editors/gedit.desktop
-
-%dir %{_datadir}/gnome/help/gedit
-%{_datadir}/gnome/help/gedit/C
-%lang(no) %{_datadir}/gnome/help/gedit/no
-
 %{_datadir}/pixmaps/*
 %{_datadir}/mime-info/*
-%{_datadir}/misc/geditrc
+%{_applnkdir}/Editors/gedit.desktop
 %{_mandir}/man1/*
