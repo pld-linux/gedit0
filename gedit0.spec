@@ -70,26 +70,15 @@ make install-strip DESTDIR=$RPM_BUILD_ROOT
 gzip -9nf $RPM_BUILD_ROOT/usr/X11R6/man/man1/gedit.1 \
 	FAQ README README.plugins ChangeLog TODO AUTHORS THANKS KNOWNBUGS
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc {FAQ,README,ChangeLog,TODO,AUTHORS,THANKS,README.plugins,KNOWNBUGS}.gz
 %attr(755,root,root) /usr/X11R6/bin/gedit
-
-%lang(cs) /usr/X11R6/share/locale/cs/LC_MESSAGES/gedit.mo
-%lang(de) /usr/X11R6/share/locale/de/LC_MESSAGES/gedit.mo
-%lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gedit.mo
-%lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/gedit.mo
-%lang(ga) /usr/X11R6/share/locale/ga/LC_MESSAGES/gedit.mo
-%lang(it) /usr/X11R6/share/locale/it/LC_MESSAGES/gedit.mo
-%lang(ko) /usr/X11R6/share/locale/ko/LC_MESSAGES/gedit.mo
-%lang(nl) /usr/X11R6/share/locale/nl/LC_MESSAGES/gedit.mo
-%lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/gedit.mo
-%lang(pt) /usr/X11R6/share/locale/pt/LC_MESSAGES/gedit.mo
-%lang(ru) /usr/X11R6/share/locale/ru/LC_MESSAGES/gedit.mo
-%lang(sv) /usr/X11R6/share/locale/sv/LC_MESSAGES/gedit.mo
 
 /usr/X11R6/share/gnome/apps/Applications/gedit.desktop
 /usr/X11R6/share/pixmaps/*
