@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Group(pl):	X11/Aplikacje/Edytory
-Source0:	http://download.sourceforge.net/gedit/%{name}-%{version}.tar.gz
+Source0:	ftp://download.sourceforge.net/pub/sourceforge/gedit/%{name}-%{version}.tar.gz
 URL:		http://gedit.sourceforge.net/
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
