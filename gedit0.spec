@@ -11,7 +11,6 @@ URL:		http://gedit.sourceforge.net/
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
 BuildRequires:	zlib-devel
-BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel > 1.0.55
 BuildRequires:	gnome-print-devel >= 0.18
 BuildRequires:	libglade-devel >= 0.11
