@@ -2,7 +2,7 @@ Summary:	gEdit - small but powerful text editor for X Window
 Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
 Version:	0.7.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Editors
 Group(pl):	X11/Aplikacje/Edytory
@@ -51,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 
 make install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	sysdir=%{_applnkdir}/Editors
+	sysdir=%{_applnkdir}/Office/Editors
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	FAQ README README.plugins ChangeLog TODO AUTHORS THANKS TODO-road_to_1.0.0
@@ -67,5 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gedit
 %{_datadir}/pixmaps/*
 %{_datadir}/mime-info/*
-%{_applnkdir}/Editors/gedit.desktop
+%{_applnkdir}/Office/Editors/gedit.desktop
 %{_mandir}/man1/*
