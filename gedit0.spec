@@ -11,6 +11,7 @@ Group(pl):	X11/Aplikacje/Edytory
 Group(pt):	X11/Aplicações/Editores
 Source0:	http://ftp1.sourceforge.net/gedit/%{name}-%{version}.tar.gz
 URL:		http://gedit.sourceforge.net/
+Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
