@@ -1,0 +1,11 @@
+--- gedit-0.9.6/configure.in~	Mon Mar 19 05:10:55 2001
++++ gedit-0.9.6/configure.in	Tue Apr 24 02:16:18 2001
+@@ -47,7 +47,7 @@
+ AM_CONDITIONAL(HAVE_LIBZVT, test x$have_libzvt = xyes)
+ 
+ ALL_LINGUAS="az ca cs da de el es fi fr ga gl hu it ja ko lt nl no pl pt pt_BR ru sv sk sl tr uk wa zh_TW.Big5 zh_CN.GB2312"
+-AM_GNOME_GETTEXT
++AM_GNU_GETTEXT
+ 
+ dnl ******************************
+ dnl gtk+ checking
