@@ -50,7 +50,7 @@ mv -f configure.in.tmp configure.in
 rm -f missing acinclude.m4
 %{__libtoolize}
 %{__gettextize}
-aclocal -I macros
+%{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
 %configure \
