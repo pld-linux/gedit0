@@ -18,7 +18,7 @@ BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	gnome-vfs >= 1.0
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
-BuildRequires:	libglade-devel >= 0.11
+BuildRequires:	libglade-gnome-devel >= 0.11
 BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -65,8 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	sysdir=%{_applnkdir}/Office/Editors
 
-gzip -9nf FAQ README README.plugins ChangeLog TODO AUTHORS THANKS
-
 %find_lang %{name} --with-gnome
 
 %clean
@@ -74,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc FAQ README README.plugins ChangeLog TODO AUTHORS THANKS
 %attr(755,root,root) %{_bindir}/gedit
 %dir %{_libdir}/gedit
 %dir %{_libdir}/gedit/plugins
