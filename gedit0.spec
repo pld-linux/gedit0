@@ -7,6 +7,7 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/0.9/%{name}-%{version}.tar.bz2
+# Source0-md5:	ebef0c5e02fd3592350ff5b6fb9c6725
 URL:		http://gedit.sourceforge.net/
 Patch0:		%{name}-gnome-config.patch
 BuildRequires:	autoconf
