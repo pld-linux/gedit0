@@ -1,8 +1,8 @@
 Summary:	gEdit - small but powerful text editor for X Window
 Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
-Version:	0.9.1
-Release:	2
+Version:	0.9.3
+Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Group(de):	X11/Applikationen/Editors
@@ -12,7 +12,7 @@ Source0:	ftp://download.sourceforge.net/pub/sourceforge/gedit/%{name}-%{version}
 URL:		http://gedit.sourceforge.net/
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel > 1.0.55
-BuildRequires:	gnome-print-devel >= 0.23
+BuildRequires:	gnome-print-devel >= 0.24
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
 BuildRequires:	libglade-devel >= 0.11
