@@ -93,23 +93,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir /usr/X11R6/include/gedit
 /usr/X11R6/include/gedit/client.h
 /usr/X11R6/lib/libclient.a
-
-%description
-* Tue Apr 27 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [0.5.0-3]
-- cleaned up spec file for PLD use,
-- fixed Summary, Group and %description fields,
-- added pl translation,
-- added -q setup parameter,
-- changed prefix to /usr/X11R6,
-- added full %defattr description,
-- added %attr and %lang macros,
-- added pl translation for gnome desktop file,
-- added using DESTDIR during install (gedit-DESTDIR.patch),
-- added stripping binaries during install,
-- added some BuildPrereqs,
-- recompiled on rpm 3,
-- major changes.
-
-* Thu Oct 22 1998 Alex Roberts <bse@dial.pipex.com>
-- First try at an RPM
