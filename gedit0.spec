@@ -1,18 +1,17 @@
 Summary:	gEdit - small but powerful text editor for X Window
 Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
-Version:	0.9.6
-Release:	3
+Version:	0.9.7
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Editors
 Group(de):	X11/Applikationen/Editors
 Group(pl):	X11/Aplikacje/Edytory
 Group(pt):	X11/Aplicações/Editores
-Source0:	http://ftp1.sourceforge.net/gedit/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/gnome/stable/sources/gedit/%{name}-%{version}.tar.bz2
 URL:		http://gedit.sourceforge.net/
-Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
-Patch1:		%{name}-gnome-config.patch
+Patch0:		%{name}-gnome-config.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -46,10 +45,11 @@ dokumentów naraz i wiele innych.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-rm -f acinclude.m4
 
 %build
+sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
+mv -f configure.in.tmp configure.in
+rm -f missing acinclude.m4
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
