@@ -1,8 +1,8 @@
 Summary:	gEdit - small but powerful text editor for X Window
 Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
-Version:	0.9.4
-Release:	3
+Version:	0.9.5
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Editors
