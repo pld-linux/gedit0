@@ -35,6 +35,7 @@ Summary:	Develop plugins for the gEdit editor.
 Summary(pl):	Biblioteki umo¿liwiaj±ce pisanie pluginów do gEdit.
 Group: 		Development/Libraries
 Group(pl):	Programowanie/Biblioteki
+Requires:	%{name} = %{version}
 
 %description devel
 gEdit is a small but powerful text editor for GTK+ and/or GNOME.
