@@ -23,6 +23,7 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_libexecdir	%{_libdir}
 
 %description
 gEdit is a small but powerful text editor for GTK+ and/or GNOME.
@@ -64,6 +65,7 @@ sposobów.
 %patch3 -p0
 
 %build
+gettextize --copy --force
 LDFLAGS="-s" ; export LDFLAGS
 %configure
 
