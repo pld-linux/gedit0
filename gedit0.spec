@@ -6,7 +6,7 @@ Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Editors
-Source0:	ftp://ftp.gnome.org/pub/gnome/stable/sources/gedit/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/0.9/%{name}-%{version}.tar.bz2
 URL:		http://gedit.sourceforge.net/
 Patch0:		%{name}-gnome-config.patch
 BuildRequires:	autoconf
