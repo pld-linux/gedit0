@@ -2,8 +2,8 @@ Summary:	gEdit - small but powerful text editor for X Window
 Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
 Version:	0.6.1
-Release:	1
-Copyright:	GPL
+Release:	2
+License:	GPL
 Group:		X11/Applications/Editors
 Group(pl):	X11/Aplikacje/Edytory
 Source:		http://gedit.pn.org/tar/%{name}-%{version}.tar.gz
@@ -17,7 +17,7 @@ BuildRequires:	zlib-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gettext-devel
-Requires: 	go-plugins
+Requires:	go-plugins
 Obsoletes:	gedit-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -26,17 +26,17 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 %define		_applnkdir	%{_datadir}/applnk
 
 %description
-gEdit is a small but powerful text editor for GTK+ and/or GNOME.
-It includes such features as split-screen mode, a plugin API, which 
-allows gEdit to be extended to support many features while remaining 
-small at its core, multiple document editing and many more functions.
+gEdit is a small but powerful text editor for GTK+ and/or GNOME. It
+includes such features as split-screen mode, a plugin API, which  allows
+gEdit to be extended to support many features while remaining  small at its
+core, multiple document editing and many more functions.
 
 %description -l pl
-gEdit jest ma³ym ale potê¿nym edytorem tekstu dla GTK+ i/lub GNOME.
-Zawiera takie funkcje jak tryb podzielonego ekranu, API dla "wtyczek",
-który umo¿liwia rozszerzenie funkcji gEdita o dodatkowe mo¿liwo¶ci,
-nie zwiêkszaj±c rozmiarów samego programu, mo¿liwo¶æ edycji wielu 
-dokumentów naraz i wiele innych.
+gEdit jest ma³ym ale potê¿nym edytorem tekstu dla GTK+ i/lub GNOME. Zawiera
+takie funkcje jak tryb podzielonego ekranu, API dla "wtyczek", który
+umo¿liwia rozszerzenie funkcji gEdita o dodatkowe mo¿liwo¶ci, nie
+zwiêkszaj±c rozmiarów samego programu, mo¿liwo¶æ edycji wielu  dokumentów
+naraz i wiele innych.
 
 %prep
 %setup -q
