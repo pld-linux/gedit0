@@ -16,7 +16,7 @@ BuildPrereq:	imlib-devel
 BuildPrereq:	zlib-devel
 BuildPrereq:	XFree86-devel
 BuildPrereq:	gnome-libs-devel
-BuildRoot:      /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 gEdit is a small but powerful text editor for GTK+ and/or GNOME.
