@@ -1,8 +1,8 @@
 Summary:	gEdit - small but powerful text editor for X Window
 Summary(pl):	gEdit - ma³y ale potê¿ny edytor tekstu dla X Window
 Name:		gedit
-Version:	0.7.9
-Release:	2
+Version:	0.9.0
+Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Group(pl):	X11/Aplikacje/Edytory
@@ -42,7 +42,7 @@ dokumentów naraz i wiele innych.
 gettextize --copy --force
 LDFLAGS="-s" ; export LDFLAGS
 %configure \
-	--disable-staic
+	--disable-static
 
 %{__make} gtkrcdir=%{_datadir}/misc
 
