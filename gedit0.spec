@@ -9,7 +9,7 @@ Group(pl):	X11/Aplikacje/Edytory
 Source:		http://gedit.pn.org/%{name}-%{version}.tar.gz
 Patch0:		gedit-desktop.patch
 Patch1:		gedit-makefile.patch
-URL:		http://gedit.pn.org
+URL:		http://gedit.pn.org/
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	glib-devel >= 1.2.0
 BuildRequires:	imlib-devel
@@ -21,6 +21,7 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_applnkdir	%{_datadir}/applnk
 
 %description
 gEdit is a small but powerful text editor for GTK+ and/or GNOME.
@@ -53,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 make install-strip DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/gedit.1 \
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	FAQ README README.plugins ChangeLog TODO AUTHORS THANKS KNOWNBUGS \
 	TODO-road_to_1.0.0
 
@@ -64,11 +65,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc {FAQ,README,ChangeLog,TODO,AUTHORS,THANKS,README.plugins,KNOWNBUGS}.gz
-%doc TODO-road_to_1.0.0.gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/gedit
 
-%{_datadir}/applnk/Editors/gedit.desktop
+%{_applnkdir}/Editors/gedit.desktop
 
 %dir %{_datadir}/gnome/help/gedit
 %{_datadir}/gnome/help/gedit/C
@@ -77,4 +77,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/*
 %{_datadir}/mime-info/*
 %{_datadir}/misc/geditrc
-%{_mandir}/man1/gedit.1.gz
+%{_mandir}/man1/*
