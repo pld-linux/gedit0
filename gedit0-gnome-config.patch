@@ -1,0 +1,16 @@
+--- gedit-0.9.6/configure.in~	Tue Nov 20 23:41:01 2001
++++ gedit-0.9.6/configure.in	Tue Nov 20 23:41:31 2001
+@@ -128,11 +128,8 @@
+    AC_MSG_ERROR(Did not find gnome-vfs installed)
+ fi
+ 
+-EXTRA_GNOME_LIBS=`gnome-config --libs print libglade vfs`
+-EXTRA_GNOME_CFLAGS=`gnome-config --cflags print libglade vfs`
+-
+-AC_SUBST(EXTRA_GNOME_LIBS)
+-AC_SUBST(EXTRA_GNOME_CFLAGS)
++LDFLAGS="$LDFLAGS "`gnome-config --libs print libglade vfs`
++CFLAGS="$CFLAGS "`gnome-config --cflags print libglade vfs`
+ 
+ AC_SUBST(CFLAGS)
+ AC_SUBST(CPPFLAGS)
