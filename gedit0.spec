@@ -42,6 +42,7 @@ dokumentów naraz i wiele innych.
 
 %prep
 %setup -q
+%patch -p1
 
 rm -f acinclude.m4
 
