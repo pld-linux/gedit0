@@ -19,11 +19,10 @@ BuildRequires:	gnome-libs-devel
 BuildRequires:	gettext-devel
 Requires:	go-plugins
 Obsoletes:	gedit-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 gEdit is a small but powerful text editor for GTK+ and/or GNOME. It
