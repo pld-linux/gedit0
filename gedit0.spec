@@ -51,8 +51,8 @@ rm -f missing acinclude.m4
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--disable-static
 
