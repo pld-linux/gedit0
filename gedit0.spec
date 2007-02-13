@@ -1,5 +1,5 @@
 Summary:	gEdit - small but powerful text editor for X Window
-Summary(pl.UTF-8):   gEdit - mały ale potężny edytor tekstu dla X Window
+Summary(pl.UTF-8):	gEdit - mały ale potężny edytor tekstu dla X Window
 Name:		gedit
 Version:	0.9.7
 Release:	3
