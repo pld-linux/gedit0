@@ -4,27 +4,26 @@ Name:		gedit
 Version:	0.9.7
 Release:	3
 Epoch:		1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications/Editors
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/0.9/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/0.9/%{name}-%{version}.tar.bz2
 # Source0-md5:	ebef0c5e02fd3592350ff5b6fb9c6725
-URL:		http://gedit.sourceforge.net/
 Patch0:		%{name}-gnome-config.patch
+URL:		http://gedit.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	docbook-style-dsssl
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel > 1.0.55
 BuildRequires:	gnome-print-devel >= 0.28
-BuildRequires:	gnome-vfs >= 1.0
+BuildRequires:	gnome-vfs-devel >= 1.0
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	imlib-devel
 BuildRequires:	libglade-gnome-devel >= 0.11
 BuildRequires:	libtool
 BuildRequires:	zlib-devel
-BuildRequires:	gnome-vfs-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gedit-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
 %description
@@ -56,7 +55,8 @@ rm -f missing acinclude.m4
 %configure \
 	--disable-static
 
-%{__make} gtkrcdir=%{_datadir}/misc
+%{__make} \
+	gtkrcdir=%{_datadir}/misc
 
 %install
 rm -rf $RPM_BUILD_ROOT
